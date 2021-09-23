@@ -1,0 +1,132 @@
+/* This is an example of how to import a partial scss file*/
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body {
+  background: white;
+}
+
+nav {
+  position: fixed;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  background-color: black;
+  color: #b4c5e4ff;
+  overflow: scroll;
+}
+
+nav li {
+  margin-top: 10px;
+  font-size: 20px;
+  list-style-type: none;
+  width: 100%;
+  text-align: center;
+}
+
+li:hover {
+  color: #3d52d5ff;
+  cursor: pointer;
+}
+
+.user-info {
+  border: 4px solid green;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-info img {
+  height: auto;
+  width: 100px;
+}
+
+#contentContainer {
+  position: fixed;
+  height: 100%;
+  width: 80%;
+  right: 0;
+  border: 3px solid #090c9bff;
+}
+
+.bookings-container {
+  display: flex;
+  border: 4px solid yellow;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bookings-container #bookings {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  border: 3px solid #269b09;
+}
+
+#booking-card {
+  border: 3px solid #9b097b;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  min-width: 80px;
+  max-width: 200px;
+}
+
+#moneySpent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px solid #aa2b2f;
+  width: 30%;
+}
+
+/*# sourceMappingURL=styles.scss.map */

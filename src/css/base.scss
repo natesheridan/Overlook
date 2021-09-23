@@ -1,6 +1,78 @@
 /* This is an example of how to import a partial scss file*/
 @import '_variables';
-
+@import '_reset';
+@import '_mixins';
 body {
-  background: $primary-background;
+  background: white;
+}
+nav {
+  position: fixed;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  background-color: black;
+  color: $light-steel-blue;
+  overflow: scroll;
+}
+nav li {
+  margin-top: 10px;
+  font-size: 20px;
+  list-style-type: none;
+  width: 100%;
+  text-align: center;
+}
+li:hover{
+  color: $iris;
+  cursor: pointer;
+}
+.user-info{
+  border: 4px solid green;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.user-info img{
+  height: auto;
+  width: 100px;
+}
+#contentContainer{
+  position: fixed;
+  height: 100%;
+  width: 80%;
+  right: 0;
+  @include border(#090c9bff)
+
+}
+.bookings-container{
+  display: flex;
+  border: 4px solid yellow;
+  @include vertical-padding(50px);
+  @include horizontal-padding(40px);
+}
+.bookings-container #bookings{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  @include border(rgb(38, 155, 9));
+}
+#booking-card{
+  @include border(rgb(155, 9, 123));
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  min-width: 80px;
+  max-width: 200px;
+}
+#moneySpent {
+  display: flex;
+  @include centered();
+  flex-direction: column;
+  @include border(#aa2b2f);
+  width: 30%
 }
