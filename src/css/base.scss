@@ -2,6 +2,7 @@
 @import '_variables';
 @import '_reset';
 @import '_mixins';
+@import '_btns';
 body {
   background: white;
 }
@@ -39,7 +40,7 @@ li:hover{
   height: auto;
   width: 100px;
 }
-#contentContainer{
+.cc{
   position: fixed;
   height: 100%;
   width: 80%;
@@ -60,8 +61,10 @@ li:hover{
 .bookings-container #bookings{
   display: flex;
   justify-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 200px;
+  overflow: scroll;
   width: 70%;
   @include border(rgb(38, 155, 9));
 }
@@ -80,3 +83,29 @@ li:hover{
   @include border(#aa2b2f);
   width: 30%
 }
+#newBookingContainer {
+  display: flex;
+  @include border(#e936e0);
+  @include vertical-padding(50px);
+  @include horizontal-padding(40px);
+}
+.new-booking-search{
+  @include flex-column();
+  @include flex-center();
+  @include border(#414141);
+  width: 30%;
+}
+#newBookingSearchResults{
+  @include flex-center();
+  @include border(#8b4141);
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.new-booking-result{
+  @include flex-column();
+  @include border(#01e9af);
+  width: 200px;
+  text-align: center;
+}
+

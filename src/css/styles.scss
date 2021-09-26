@@ -42,6 +42,177 @@ input {
   border-radius: 0;
 }
 
+.btn {
+  border: none;
+  font-family: "Lato";
+  font-size: 20px;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+  font-family: "FontAwesome";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Icon separator */
+.btn-sep {
+  padding: 25px 60px 25px 120px;
+}
+
+.btn-sep:before {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Button 1 */
+.btn-blue {
+  background: #3498db;
+  color: #fff;
+}
+
+.btn-blue:hover {
+  background: #2980b9;
+}
+
+.btn-blue:active {
+  background: #2980b9;
+  top: 2px;
+}
+
+.btn-blue:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+/* Button 2 */
+.btn-green {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.btn-green:hover {
+  background: #27ae60;
+}
+
+.btn-green:active {
+  background: #27ae60;
+  top: 2px;
+}
+
+.btn-green:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+/* Button 3 */
+.btn-red {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn-red:hover {
+  background: #c0392b;
+}
+
+.btn-red:active {
+  background: #c0392b;
+  top: 2px;
+}
+
+.btn-red:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+/* Button 3 */
+.btn-slate {
+  background: #34495e;
+  color: #fff;
+}
+
+.btn-slate:hover {
+  background: #2c3e50;
+}
+
+.btn-slate:active {
+  background: #2c3e50;
+  top: 2px;
+}
+
+.btn-slate:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+.icon-cart:before {
+  content: "\f07a";
+}
+
+.icon-heart:before {
+  content: "\f55a";
+}
+
+.icon-info:before {
+  content: "\f05a";
+}
+
+.icon-send:before {
+  content: "\f1d8";
+}
+
+.icon-search:before {
+  content: "\f002";
+}
+
 body {
   background: white;
 }
@@ -85,7 +256,7 @@ li:hover {
   width: 100px;
 }
 
-#contentContainer {
+.cc {
   position: fixed;
   height: 100%;
   width: 80%;
@@ -111,8 +282,10 @@ li:hover {
 .bookings-container #bookings {
   display: flex;
   justify-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 200px;
+  overflow: scroll;
   width: 70%;
   border: 3px solid #269b09;
 }
@@ -133,6 +306,42 @@ li:hover {
   flex-direction: column;
   border: 3px solid #aa2b2f;
   width: 30%;
+}
+
+#newBookingContainer {
+  display: flex;
+  border: 3px solid #e936e0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.new-booking-search {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #414141;
+  width: 30%;
+}
+
+#newBookingSearchResults {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #8b4141;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.new-booking-result {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #01e9af;
+  width: 200px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.scss.map */
