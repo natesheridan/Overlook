@@ -3,21 +3,12 @@ import {getAllCustomers, getAllBookings, getSingleCustomer, getAllRooms, postNew
 
 
 class User{
-    constructor(id){
+    constructor(id, name = "nullName"){
         this.id = id;
-        this.name;
+        this.name = name;
         this.bookings;
         this.totalSpent;
     };
-    updateUserData(userData, bookingsData){
-
-    }
-
-    updateNameData(name){
-        this.name = name
-    }
-    findAllBookingsByUser(bookingsData){
-    }
 
 
 }

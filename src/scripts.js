@@ -4,6 +4,7 @@ import apiCalls from './js/apiCalls';
 import sort from './js/sort';
 import domUpdates from './js/domUpdates';
 import User from './js/user/User'
+
     //Styling Files
 import './css/styles.scss'
     //Image paths
@@ -42,9 +43,10 @@ function getData() {
 function setData(data) {
     //set random user
     currentUserData = data[0];
-    allBookings = data[1];
-    sort.findUserBookings(currentUserData.id, allBookings);
-    
+    allBookings = data[1].bookings;
+    let userBookings = sort.findUserBookings(currentUserData.id, allBookings);
+    console.log(userBookings)
+
     //assign all bookings to a variable
 }
 

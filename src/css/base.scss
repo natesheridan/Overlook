@@ -45,7 +45,11 @@ li:hover{
   width: 80%;
   right: 0;
   @include border(#090c9bff)
-
+}
+#greetingMessage{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 30px;
 }
 .bookings-container{
   display: flex;
