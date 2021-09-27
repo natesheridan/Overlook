@@ -4,7 +4,18 @@
 @import '_mixins';
 @import '_btns';
 body {
-  background: white;
+  background: $black-coffee;
+  color: white
+}
+.login-view{
+  height: 100%;
+  width: 100%;
+  @include vertical-padding(200px);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $black-coffee;
 }
 nav {
   position: fixed;
@@ -63,7 +74,7 @@ li:hover{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-height: 200px;
   overflow: scroll;
   width: 70%;

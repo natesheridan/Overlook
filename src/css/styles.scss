@@ -213,7 +213,20 @@ input {
 }
 
 body {
-  background: white;
+  background: #3c3744ff;
+  color: white;
+}
+
+.login-view {
+  height: 100%;
+  width: 100%;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3c3744ff;
 }
 
 nav {
@@ -283,7 +296,7 @@ li:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-height: 200px;
   overflow: scroll;
   width: 70%;
