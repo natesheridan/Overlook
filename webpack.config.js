@@ -6,7 +6,7 @@ module.exports = {
   "output": {
     "path": __dirname + '/dist',
     "filename": "bundle.js",
-    sourceMapFilename: "bundle.js.map"
+    // sourceMapFilename: "bundle.js.map"
   },
   devServer: {
     static: path.join(__dirname, 'dist')
