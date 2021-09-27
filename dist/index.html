@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <title>Overlook</title>
 </head>
 <body>
@@ -17,33 +19,42 @@
       <li>Nav3</li>
       <li>Nav4</li>
     </nav>
-    <section id="contentContainer">
+    <section id="contentContainer" class="cc">
+      <h1 id="greetingMessage">Hello!</h1>
       <div class="bookings-container">
         <section id="bookings">
           <article id="booking-card">
-            <p id="bc-date">Date: 33/33/1111</p>
-            <p id="bc-date">Room: 321</p>
-            <p id="bc-date">Fees: $42</p>
-          </article>
-          <article id="booking-card">
-            <p id="bc-date">Date: 33/33/1111</p>
-            <p id="bc-date">Room: 321</p>
-            <p id="bc-date">Fees: $42</p>
-          </article>
-          <article id="booking-card">
-            <p id="bc-date">Date: 33/33/1111</p>
-            <p id="bc-date">Room: 321</p>
-            <p id="bc-date">Fees: $42</p>
-          </article>
-          <article id="booking-card">
-            <p id="bc-date">Date: 33/33/1111</p>
-            <p id="bc-date">Room: 321</p>
-            <p id="bc-date">Fees: $42</p>
+            <p id="bc-date">Date: </p>
+            <p id="bc-date">Room: </p>
+            <p id="bc-date">Fees: </p>
           </article>
         </section>
         <section id="moneySpent">
           <p>Funds Accumulated:</p>
-          <p>$2,224</p>
+          <p id="accumulatedFunds">$999,999</p>
+        </section>
+      </div>
+      <div id="newBookingContainer">
+        <section class="new-booking-search">
+          <p>Make a new booking: </p>
+          <input type="date" id="newTripDateInput" name="newTripDateInput" value="2021-09-29" min="2011-09-30" max="2022-09-31">
+          <button type="submit" id="searchNewBookings" class="btn btn-blue btn-sep icon-search">Search</button>
+        </section>
+        <section class="new-booking-results">
+          <div class="hidden room-filters">
+              <p>Filter by room type:</p>
+              <input type="radio" id="single" name="filters" value="single room">
+              <label for="single">Single Room</label>
+              <input type="radio" id="junior" name="filters" value="junior suite">
+              <label for="junior">Junior Suite</label>
+              <input type="radio" id="suite" name="filters" value="suite">
+              <label for="suite">Suite</label>
+              <input type="radio" id="residential" name="filters" value="residential suite">
+              <label for="residential">Residential Suite</label>
+          </div>
+          <div id=newBookingSearchResults>
+            <img src="images/turing-logo.png">
+          </div>
         </section>
       </div>
     </section>
