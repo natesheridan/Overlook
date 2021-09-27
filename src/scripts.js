@@ -14,13 +14,15 @@ import './css/styles.scss'
     
 //DOM ELEMENTS
 let newBookingDateQuery = document.querySelector('#newTripDateInput')
+let usernameInput = document.querySelector('#usernameInput')
+let passwordInput = document.querySelector('#passwordInput')
     
     
 //EVENT LISTENERS
 document.querySelector("#searchNewBookings").addEventListener("click", searchForNewBooking);
 document.querySelector(".room-filters").addEventListener('click', filterNewBookingResults);
 document.querySelector("#newBookingSearchResults").addEventListener('click', confirmBooking);
-
+document.querySelector("#submitLoginBtn").addEventListener('click', login);
 //GLOBAL VARIABLES
 let currentUserData;
 let bookingsData;
@@ -29,27 +31,25 @@ let roomData;
 
 
 
-//PAGE LOAD FUNCTIONS BEFORE LOGIN PAGE IS MADE
-window.addEventListener('load', ()=>{
-    getData()
-})
-
-
 
 //GLOBAL FUNCTIONS
 //API functions
-let reloadTest = 0
 let userNumber; 
-function getData() {
-    if(reloadTest===0){
-        reloadTest++
-        userNumber = generateNum();
-    }
-    //RANDOM USER -- REMOVE when adding login
-    /////////////////////////////////////////
+function getData(userNumber) {
     return Promise.all([apiCalls.getSingleCustomer(userNumber), apiCalls.getAllBookings(), apiCalls.getAllRooms()])
-    .then(data => setData(data));
+    .then(data => setData(data))
 };
+
+function login(){
+    if(passwordInput.value==="overlook2021"){
+        userNumber = usernameInput.value.split('customer')[1];
+        getData(userNumber).then(()=>{
+            domUpdates.hide("login")
+            domUpdates.show("overlook")
+        })
+    }
+    return
+}
 
 function setData(data) {
     currentUserData = new User(data[0].id, data[0].name);
@@ -111,7 +111,7 @@ function confirmBooking(event){
         domUpdates.show(`confirmed-${roomNum}`);
         setTimeout(function(){
             domUpdates.hide(`confirmed-${roomNum}`);
-            getData();
+            getData(userNumber);
         }, 5000)
     }
     else if(buttonState[roomNum]===2){
