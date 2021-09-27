@@ -45,6 +45,7 @@ li:hover{
   height: 100%;
   width: 80%;
   right: 0;
+  overflow: scroll;
   @include border(#090c9bff)
 }
 #greetingMessage{
@@ -99,13 +100,43 @@ li:hover{
   @include flex-center();
   @include border(#8b4141);
   flex-wrap: wrap;
-  justify-content: space-between;
+  max-height: 300px;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-start;
+  overflow: scroll;
 
 }
 .new-booking-result{
   @include flex-column();
-  @include border(#01e9af);
+  @include border(#1520bb);
   width: 200px;
   text-align: center;
 }
+.new-booking-result p{
+  display: block;
+}
+.form-horizontal{
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  @include centered();
+  width: 100%;
+}
+.form-horizontal p{
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
 
+.conf1{
+  @include border(#ff5e00);
+}
+
+.conf2{
+  @include border(#048a16);
+}
+
+.hidden{
+  display: none;
+}
