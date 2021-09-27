@@ -19,12 +19,12 @@ let apiCalls = {
         .then(response => response.json())
         .then(data => data)
     },
-    postNewBooking(){
+    postNewBooking(obj){
         return fetch('https://overlookbe.herokuapp.com/api/v1/bookings',
         {
           method: 'POST',
-          body: JSON.stringify({/*here*/}),
-          //here: { "userID": 48, "date": "2019/09/23", "roomNumber": 4 }
+          body: JSON.stringify(obj),
+          //obj: { "userID": 48, "date": "2019/09/23", "roomNumber": 4 }
           headers: {
               "Content-Type":"application/json"
           },
