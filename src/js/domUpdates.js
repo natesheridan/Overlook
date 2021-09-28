@@ -5,19 +5,23 @@ const domUpdates  ={
     populateUserBookings(bookingsArray){
         this.bookingSection.innerHTML = ''
         bookingsArray.forEach(booking => {
-            let testFees = 0
             this.greetingMessage.innerHTML = 
             this.bookingSection.innerHTML += `
             <article id="booking-card">
+            <img src="https://exp.cdn-hotels.com/hotels/1000000/30000/24400/24321/18efc43d_z.jpg?impolicy=fcrop&w=500&h=333&q=medium" alt="room image">
+            <br>
             <p id="bc-date">Date: ${booking.date}</p>
-            <p id="bc-date">Room: ${booking.roomNumber}</p>
-            <p id="bc-date">Fees: ${testFees}</p>
+            <p id="bc-room">Room: R${booking.roomNumber}</p>
             </article>`
         })
     },
     greetingMessage: document.querySelector('#greetingMessage'),
     updateGreetingMessage(str){
         this.greetingMessage.innerHTML = str
+    },
+    userInfoName: document.querySelector('#userName'),
+    updateUserName(name){
+        this.userInfoName.innerHTML = name
     },
     accumulatedFunds: document.querySelector('#accumulatedFunds'),
     updateFundsAccumulated(num){
@@ -38,21 +42,29 @@ const domUpdates  ={
                 bidetFlag = "check"
             }
             this.newBookingResults.innerHTML += `
-            <article class="new-booking-result" id ="room-${room.number}">
+            <button class="new-booking-result" id ="room-${room.number}">
+              <img src="https://exp.cdn-hotels.com/hotels/1000000/30000/24400/24321/18efc43d_z.jpg?impolicy=fcrop&w=500&h=333&q=medium" alt="room image">
+              <br>
               <p>Room type: ${room.roomType}</p>
               <p>Bed Size: ${room.bedSize}</p> </p>
               <p>Beds: ${room.numBeds}</p>
               <p>Bidet:<i class="fa fa-${bidetFlag}" aria-hidden="true"></i></p>
               <p>Price: $${room.costPerNight}</p>
-            </article>
+            </button>
             <article class="new-booking-result conf1 hidden" id="confirmation-${room.number}">
+              <img src="https://exp.cdn-hotels.com/hotels/1000000/30000/24400/24321/18efc43d_z.jpg?impolicy=fcrop&w=500&h=333&q=medium" alt="room image">
+              <br>
               <p>Are you sure?</p>
               <p>Room type: ${room.roomType}</p>
               <p>Price: $${room.costPerNight}</p>
-              <p>Book it!</p>
-              <div><p>Nevermind</p></div> 
+              <div>
+                <button id="confTrue" class="conf-btn btn btn-green">Book it!</button>
+                <button id="confFalse" class="conf-btn btn btn-red">Nevermind</button>
+              </div> 
             </article>
             <article class="new-booking-result conf2 hidden" id="confirmed-${room.number}">
+              <img src="https://exp.cdn-hotels.com/hotels/1000000/30000/24400/24321/18efc43d_z.jpg?impolicy=fcrop&w=500&h=333&q=medium" alt="room image">
+              <br>
               <p>Your booking is confirmed!</p>
               <p>Your room number is:</p>
               <p>R${room.number}</p>
@@ -79,7 +91,22 @@ const domUpdates  ={
         if(type=== 'c'){t='.'}
         document.querySelector(`${t}${element}`).classList.add('hidden')
     },
+    //views:
     
+    changeViews(view){
+
+        if (view ==="home"){
+            this.hide("new-bookings-container", "c")
+            this.show("bookings-container", "c")
+            this.updateGreetingMessage("Home")
+        };
+        if (view==="newBooking"){
+            this.hide("bookings-container", "c")
+            this.show("new-bookings-container", "c")
+            this.updateGreetingMessage("Create a new booking:")
+
+        };
+    },
     
 
 
