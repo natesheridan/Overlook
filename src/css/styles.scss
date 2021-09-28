@@ -131,8 +131,21 @@ input {
 
 body {
   background: white;
+  color: #3c3744ff;
   font-family: "Lato";
   text-transform: uppercase;
+}
+
+.login-view {
+  height: 100%;
+  width: 100%;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  color: #3c3744ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
 }
 
 nav {
@@ -235,7 +248,7 @@ nav button:hover {
 }
 
 .room-filters {
-  background-color: #3d52d5ff;
+  background-color: #fbfff1ff;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 20px;
@@ -283,6 +296,7 @@ nav button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: flex-start;
   width: 30%;
 }
 
@@ -317,9 +331,10 @@ nav button:hover {
 .new-booking-result {
   display: flex;
   flex-direction: column;
-  border: 3px solid #3d3d3d;
+  border: 3px solid #b4c5e4ff;
   margin-top: 10px;
   width: 200px;
+  cursor: pointer;
 }
 
 .new-booking-result p {
@@ -358,6 +373,48 @@ nav button:hover {
 
 .conf2 {
   border: 3px solid #048a16;
+}
+
+.bookings-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.bookings-container::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.bookings-container::-webkit-scrollbar-thumb {
+  background-color: #4f92ff;
+  border-radius: 10px;
+  border: 1px solid #030303;
+}
+
+.cc::-webkit-scrollbar {
+  width: 12px;
+}
+
+.cc::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.cc::-webkit-scrollbar-thumb {
+  background-color: #4f92ff;
+  border-radius: 10px;
+  border: 1px solid #030303;
+}
+
+#newBookingSearchResults::-webkit-scrollbar {
+  width: 12px;
+}
+
+#newBookingSearchResults::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+#newBookingSearchResults::-webkit-scrollbar-thumb {
+  background-color: #4f92ff;
+  border-radius: 10px;
+  border: 1px solid #030303;
 }
 
 .hidden {

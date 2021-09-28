@@ -15,6 +15,8 @@ import './css/styles.scss'
     
 //DOM ELEMENTS
 let newBookingDateQuery = document.querySelector('#newTripDateInput')
+let usernameInput = document.querySelector('#usernameInput')
+let passwordInput = document.querySelector('#passwordInput')
     
     
 //EVENT LISTENERS
@@ -23,7 +25,8 @@ document.querySelector(".room-filters").addEventListener('click', filterNewBooki
 document.querySelector("#newBookingSearchResults").addEventListener('click', confirmBooking);
 document.querySelector("#navNewBooking").addEventListener('click', view);
 document.querySelector("#navHome").addEventListener('click', view);
-document.querySelector("#navLogout").addEventListener('click', function() {console.log("make a logoutfunction!")});
+document.querySelector("#submitLoginBtn").addEventListener('click', login);
+// document.querySelector("#navLogout").addEventListener('click', function() {console.log("make a logoutfunction!")});
 
 //GLOBAL VARIABLES
 let currentUserData;
@@ -42,18 +45,22 @@ window.addEventListener('load', ()=>{
 
 //GLOBAL FUNCTIONS
 //API functions
-let reloadTest = 0
 let userNumber; 
-function getData() {
-    if(reloadTest===0){
-        reloadTest++
-        userNumber = generateNum();
-    }
-    //RANDOM USER -- REMOVE when adding login
-    /////////////////////////////////////////
+function getData(userNumber) {
     return Promise.all([apiCalls.getSingleCustomer(userNumber), apiCalls.getAllBookings(), apiCalls.getAllRooms()])
-    .then(data => setData(data));
+    .then(data => setData(data))
 };
+
+function login(){
+    if(passwordInput.value==="overlook2021"){
+        userNumber = usernameInput.value.split('customer')[1];
+        getData(userNumber).then(()=>{
+            domUpdates.hide("login")
+            domUpdates.show("overlook")
+        })
+    }
+    return
+}
 
 function setData(data) {
     currentUserData = new User(data[0].id, data[0].name);
@@ -113,7 +120,6 @@ function confirmBooking(event){
     }
     if (!buttonState[roomNum] || buttonState[roomNum]===0){
         buttonState[roomNum] = 1;
-        //display confirmation card
         domUpdates.hide(`room-${roomNum}`);
         domUpdates.show(`confirmation-${roomNum}`);
     }
@@ -130,7 +136,7 @@ function confirmBooking(event){
         domUpdates.show(`confirmed-${roomNum}`);
         setTimeout(function(){
             domUpdates.hide(`confirmed-${roomNum}`);
-            getData();
+            getData(userNumber);
             domUpdates.changeViews("home")
         }, 5000)
     }

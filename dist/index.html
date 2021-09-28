@@ -9,7 +9,16 @@
   <title>Overlook</title>
 </head>
 <body>
-  <div id="overlook">
+  <div id="login" class="login-view">
+    <p>Welcome please login:</p>
+    <p>Username:</p>
+    <input type="text" id="usernameInput">
+    <p>Password:</p>
+    <input type="password" id="passwordInput">
+    <br>
+    <button type="submit" id="submitLoginBtn" class="btn btn-blue">Login</button>
+  </div>
+  <div id="overlook" class="dashboard-view hidden">
     <nav>
       <div class="user-info">
         <img src="https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png" alt="user image">
@@ -17,9 +26,9 @@
       </div>
       <button id="navHome">Home</button>
       <button id="navNewBooking" >Book a Room</button>
-      <div class= "nav-footer">
+      <!-- <div class= "nav-footer">
         <button id="navLogout">Logout</button>
-      </div>
+      </div> -->
     </nav>
     <section id="contentContainer" class="cc">
       <h1 id="greetingMessage">Hello!</h1>
