@@ -4,6 +4,7 @@ import apiCalls from './js/apiCalls';
 import iterate from './js/iterate';
 import domUpdates from './js/domUpdates';
 import User from './js/user/User'
+
 import '../src/images/turing-logo.png'
 
     //Styling Files
@@ -20,6 +21,9 @@ let newBookingDateQuery = document.querySelector('#newTripDateInput')
 document.querySelector("#searchNewBookings").addEventListener("click", searchForNewBooking);
 document.querySelector(".room-filters").addEventListener('click', filterNewBookingResults);
 document.querySelector("#newBookingSearchResults").addEventListener('click', confirmBooking);
+document.querySelector("#navNewBooking").addEventListener('click', view);
+document.querySelector("#navHome").addEventListener('click', view);
+document.querySelector("#navLogout").addEventListener('click', function() {console.log("make a logoutfunction!")});
 
 //GLOBAL VARIABLES
 let currentUserData;
@@ -59,8 +63,21 @@ function setData(data) {
     let totalSpent = iterate.sumUserFundsAccumulated(userBookings, roomData)
     domUpdates.populateUserBookings(userBookings)
     domUpdates.updateGreetingMessage(`Hello ${currentUserData.name}, here's a breakdown:`)
+    domUpdates.updateUserName(currentUserData.name)
     domUpdates.updateFundsAccumulated(totalSpent)
 }
+
+function view(event){
+    if (event.target.closest('button').id.split('nav')[1]==="Home"){
+        domUpdates.changeViews("home")
+        domUpdates.updateGreetingMessage(`Hello ${currentUserData.name}, welcome home:`)
+    }
+    else if(event.target.closest('button').id.split('nav')[1]==="NewBooking"){
+    domUpdates.changeViews("newBooking")
+    }
+}
+
+
 
 let newBookingAvailableRooms;
 let searchDate;
@@ -98,7 +115,7 @@ function confirmBooking(event){
         domUpdates.hide(`room-${roomNum}`);
         domUpdates.show(`confirmation-${roomNum}`);
     }
-    else if(buttonState[roomNum]===1){
+    else if(buttonState[roomNum]===1 && event.target.closest('.conf-btn').id==="confTrue"){
         buttonState[roomNum] = 2;
         let postObj = {
             "userID": currentUserData.id,
@@ -112,9 +129,13 @@ function confirmBooking(event){
         setTimeout(function(){
             domUpdates.hide(`confirmed-${roomNum}`);
             getData();
+            domUpdates.changeViews("home")
         }, 5000)
     }
-    else if(buttonState[roomNum]===2){
+    else if(buttonState[roomNum]===1 && event.target.closest('.conf-btn').id==="confFalse"){
+        buttonState[roomNum]=0
+        domUpdates.hide(`confirmation-${roomNum}`);
+        domUpdates.show(`room-${roomNum}`);
         return;
         
     }
