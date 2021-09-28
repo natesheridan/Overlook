@@ -120,7 +120,6 @@ function confirmBooking(event){
     }
     if (!buttonState[roomNum] || buttonState[roomNum]===0){
         buttonState[roomNum] = 1;
-        //display confirmation card
         domUpdates.hide(`room-${roomNum}`);
         domUpdates.show(`confirmation-${roomNum}`);
     }
