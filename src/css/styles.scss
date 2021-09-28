@@ -1,0 +1,382 @@
+/* This is an example of how to import a partial scss file*/
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  border-radius: 0;
+}
+
+.btn {
+  border: none;
+  font-family: "Lato";
+  font-size: 20px;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+  font-family: "FontAwesome";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Icon separator */
+.btn-sep {
+  padding: 25px 60px 25px 120px;
+}
+
+.btn-sep:before {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Button 1 */
+.btn-blue {
+  background: #3498db;
+  color: #fff;
+}
+
+.btn-blue:hover {
+  background: #2980b9;
+}
+
+.btn-blue:active {
+  background: #2980b9;
+  top: 2px;
+}
+
+.btn-blue:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+/* Button 2 */
+.btn-green {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.btn-green:hover {
+  background: #27ae60;
+}
+
+.btn-green:active {
+  background: #27ae60;
+  top: 2px;
+}
+
+.btn-green:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+/* Button 3 */
+.btn-red {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn-red:hover {
+  background: #c0392b;
+}
+
+.btn-red:active {
+  background: #c0392b;
+  top: 2px;
+}
+
+.btn-red:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+/* Button 3 */
+.btn-slate {
+  background: #34495e;
+  color: #fff;
+}
+
+.btn-slate:hover {
+  background: #2c3e50;
+}
+
+.btn-slate:active {
+  background: #2c3e50;
+  top: 2px;
+}
+
+.btn-slate:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+.icon-cart:before {
+  content: "\f07a";
+}
+
+.icon-heart:before {
+  content: "\f55a";
+}
+
+.icon-info:before {
+  content: "\f05a";
+}
+
+.icon-send:before {
+  content: "\f1d8";
+}
+
+.icon-search:before {
+  content: "\f002";
+}
+
+body {
+  background: white;
+}
+
+nav {
+  position: fixed;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  background-color: black;
+  color: #b4c5e4ff;
+  overflow: scroll;
+}
+
+nav li {
+  margin-top: 10px;
+  font-size: 20px;
+  list-style-type: none;
+  width: 100%;
+  text-align: center;
+}
+
+li:hover {
+  color: #3d52d5ff;
+  cursor: pointer;
+}
+
+.user-info {
+  border: 4px solid green;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-info img {
+  height: auto;
+  width: 100px;
+}
+
+.cc {
+  position: fixed;
+  height: 100%;
+  width: 80%;
+  right: 0;
+  overflow: scroll;
+  border: 3px solid #090c9bff;
+}
+
+#greetingMessage {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+.bookings-container {
+  display: flex;
+  border: 4px solid yellow;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bookings-container #bookings {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 200px;
+  overflow: scroll;
+  width: 70%;
+  border: 3px solid #269b09;
+}
+
+#booking-card {
+  border: 3px solid #9b097b;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  min-width: 80px;
+  max-width: 200px;
+}
+
+#moneySpent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px solid #aa2b2f;
+  width: 30%;
+}
+
+#newBookingContainer {
+  display: flex;
+  border: 3px solid #e936e0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.new-booking-search {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #414141;
+  width: 30%;
+}
+
+#newBookingSearchResults {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #8b4141;
+  flex-wrap: wrap;
+  max-height: 300px;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-start;
+  overflow: scroll;
+}
+
+.new-booking-result {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #1520bb;
+  width: 200px;
+  text-align: center;
+}
+
+.new-booking-result p {
+  display: block;
+}
+
+.form-horizontal {
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-horizontal p {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.conf1 {
+  border: 3px solid #ff5e00;
+}
+
+.conf2 {
+  border: 3px solid #048a16;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.scss.map */

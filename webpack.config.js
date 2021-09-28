@@ -6,10 +6,10 @@ module.exports = {
   "output": {
     "path": __dirname + '/dist',
     "filename": "bundle.js",
-    sourceMapFilename: "bundle.js.map"
+    // sourceMapFilename: "bundle.js.map"
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist')
+    static: path.join(__dirname, 'dist')
   },
   "devtool": "source-map",
   "module": {

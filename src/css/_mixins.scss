@@ -1,0 +1,45 @@
+@mixin centered() {
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin vertical-padding($padding) {
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
+  
+@mixin horizontal-padding($padding) {
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+@mixin border($color){
+    border: 3px solid $color;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+  
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+@mixin flex-center-column {
+    @include flex-center;
+    flex-direction: column;
+}
+  
+@mixin flex-center-vert {
+    display: flex;
+    align-items: center;
+}
+  
+@mixin flex-center-horiz {
+    display: flex;
+    justify-content: center;
+}
+
