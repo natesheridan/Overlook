@@ -59,8 +59,10 @@ function setData(data) {
     currentUserData = new User(data[0].id, data[0].name);
     bookingsData = data[1].bookings;
     roomData = data[2].rooms;
+    currentUserData.bookings = bookingsData;
     let userBookings = iterate.findUserBookings(currentUserData.id, bookingsData);
     let totalSpent = iterate.sumUserFundsAccumulated(userBookings, roomData)
+    currentUserData.totalSpent = totalSpent;
     domUpdates.populateUserBookings(userBookings)
     domUpdates.updateGreetingMessage(`Hello ${currentUserData.name}, here's a breakdown:`)
     domUpdates.updateUserName(currentUserData.name)
