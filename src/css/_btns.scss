@@ -1,12 +1,11 @@
 
 .btn {
 	border: none;
-	font-family: 'Lato';
-	font-size: 20px;;
+	font-size: 12px;;
 	color: inherit;
 	background: none;
 	cursor: pointer;
-	padding: 25px 80px;
+	padding: 10px 20px;
 	display: inline-block;
 	margin: 15px 30px;
 	text-transform: uppercase;
@@ -28,28 +27,7 @@
 	transition: all 0.3s;
 }
 
-/* Pseudo elements for icons */
-.btn:before {
-	font-family: 'FontAwesome';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	position: relative;
-	-webkit-font-smoothing: antialiased;
-}
 
-
-/* Icon separator */
-.btn-sep {
-	padding: 25px 60px 25px 120px;
-}
-
-.btn-sep:before {
-	background: rgba(0,0,0,0.15);
-}
 
 /* Button 1 */
 .btn-blue {
@@ -66,15 +44,6 @@
 	top: 2px;
 }
 
-.btn-blue:before {
-	position: absolute;
-	height: 100%;
-	left: 0;
-	top: 0;
-	line-height: 3;
-	font-size: 140%;
-	width: 60px;
-}
 
 /* Button 2 */
 .btn-green {
@@ -91,15 +60,6 @@
 	top: 2px;
 }
 
-.btn-green:before {
-	position: absolute;
-	height: 100%;
-	left: 0;
-	top: 0;
-	line-height: 3;
-	font-size: 140%;
-	width: 60px;
-}
 
 /* Button 3 */
 .btn-red {
@@ -116,15 +76,6 @@
 	top: 2px;
 }
 
-.btn-red:before {
-	position: absolute;
-	height: 100%;
-	left: 0;
-	top: 0;
-	line-height: 3;
-	font-size: 140%;
-	width: 60px;
-}
 
 /* Button 3 */
 .btn-slate {
@@ -141,34 +92,3 @@
 	top: 2px;
 }
 
-.btn-slate:before {
-	position: absolute;
-	height: 100%;
-	left: 0;
-	top: 0;
-	line-height: 3;
-	font-size: 140%;
-	width: 60px;
-}
-
-
-// icons
-.icon-cart:before {
-	content: "\f07a";
-}
-
-.icon-heart:before {
-	content: "\f55a";
-}
-
-.icon-info:before {
-	content: "\f05a";
-}
-
-.icon-send:before {
-	content: "\f1d8";
-}
-
-.icon-search:before{
-    content: "\f002";
-}
