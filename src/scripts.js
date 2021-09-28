@@ -26,7 +26,7 @@ document.querySelector("#newBookingSearchResults").addEventListener('click', con
 document.querySelector("#navNewBooking").addEventListener('click', view);
 document.querySelector("#navHome").addEventListener('click', view);
 document.querySelector("#submitLoginBtn").addEventListener('click', login);
-document.querySelector("#navLogout").addEventListener('click', function() {console.log("make a logoutfunction!")});
+// document.querySelector("#navLogout").addEventListener('click', function() {console.log("make a logoutfunction!")});
 
 //GLOBAL VARIABLES
 let currentUserData;

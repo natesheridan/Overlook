@@ -243,3 +243,9 @@ nav button:hover{
 .hidden{
   display: none;
 }
+*{
+  &[aria-selected="true"]{
+    border: 5px dashed lime;
+  }
+
+}
