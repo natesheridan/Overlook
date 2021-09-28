@@ -18,15 +18,14 @@ let sampleData = [
     },
     {
     "id": 3,
-    "name": "Kelvin Schiller"
     }
 ]
 
 describe('User tests', function() {
   beforeEach(function() {
-      testUser1 = new User(1)
-      testUser2 = new User(4)
-      testUser3 = new User(6)
+      testUser1 = new User(sampleData[0].id, sampleData[0].name)
+      testUser2 = new User(sampleData[1].id, sampleData[1].name)
+      testUser3 = new User(sampleData[2].id)
   });
   it('should be an instance of User', function() {
     expect(testUser1).to.be.instanceOf(User);
@@ -34,12 +33,18 @@ describe('User tests', function() {
     expect(testUser3).to.be.instanceOf(User);
 
   });
-  it('needs to accept one parameter of an ID that is a number', function() { 
-    expect(testUser1.id).to.deep.equal(1)
-    expect(testUser2.id).to.not.deep.equal(1)
-    expect(testUser3.id).to.deep.equal(6)
+  it('needs to accept two parameters: id / name', function() { 
+    expect(testUser1.id).to.be.a('number');
+    expect(testUser2.name).to.be.a('string');
+    expect(testUser2.id).to.not.be.a('string');
   });
-  it('should be able to retrieve the user name from the API when passed an ID', function() {
-    expect(testUser1.name).to.deep.equal("John")
+  it('ID should be a number integer', function() {
+    expect(testUser1.name).to.deep.equal("Leatha Ullrich")
+    expect(testUser2.name).to.deep.equal("Rocio Schuster")
+    expect(testUser3.name).to.not.deep.equal("Kelvin Schiller")
   });
+  it('should provide response if a user does not have a name', function() {
+    expect(testUser1.name).to.deep.equal("Leatha Ullrich")
+    expect(testUser3.name).to.deep.equal("nullName")
+  })
 });
