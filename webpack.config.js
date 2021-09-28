@@ -9,7 +9,8 @@ module.exports = {
     // sourceMapFilename: "bundle.js.map"
   },
   devServer: {
-    static: path.join(__dirname, 'dist')
+    static: path.join(__dirname, 'dist'),
+    allowedHosts: ["home.n8.wtf",],
   },
   "devtool": "source-map",
   "module": {

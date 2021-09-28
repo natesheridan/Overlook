@@ -5,6 +5,8 @@
 @import '_btns';
 body {
   background: white;
+	font-family: 'Lato';
+  text-transform: uppercase;
 }
 nav {
   position: fixed;
@@ -17,28 +19,41 @@ nav {
   left: 0;
   background-color: black;
   color: $light-steel-blue;
-  overflow: scroll;
 }
-nav li {
+nav button {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 120%;
   list-style-type: none;
   width: 100%;
+  background: transparent;
+  color: white;
   text-align: center;
+  outline: none;
+  text-transform: uppercase;
+  border-style: none none dashed none;
 }
-li:hover{
+.nav-footer{
+  position: absolute;
+  bottom:10%
+}
+nav button:hover{
   color: $iris;
   cursor: pointer;
+  border-style: none none inset none;
 }
 .user-info{
-  border: 4px solid green;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
   width: 100%;
+  font-size: 12px;
+  @include vertical-padding(20px)
 }
 .user-info img{
   height: auto;
   width: 100px;
+  padding-bottom: 10px;
 }
 .cc{
   position: fixed;
@@ -46,7 +61,6 @@ li:hover{
   width: 80%;
   right: 0;
   overflow: scroll;
-  @include border(#090c9bff)
 }
 #greetingMessage{
   text-align: center;
@@ -55,7 +69,6 @@ li:hover{
 }
 .bookings-container{
   display: flex;
-  border: 4px solid yellow;
   @include vertical-padding(50px);
   @include horizontal-padding(40px);
 }
@@ -63,58 +76,92 @@ li:hover{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-between;
-  max-height: 200px;
+  justify-content: space-around;
+  max-height: 70vh;
   overflow: scroll;
   width: 70%;
-  @include border(rgb(38, 155, 9));
+  @include gradient-inset-shadow();
 }
 #booking-card{
-  @include border(rgb(155, 9, 123));
+  border: 1px solid $black-coffee;
   display: flex;
+  margin-bottom: 20px;
   flex-direction: column;
-  width: 15vw;
+  text-align: center;
   min-width: 80px;
   max-width: 200px;
+  border-radius: 3px;
 }
+.room-filters{
+  background-color: $iris;
+  @include vertical-padding(5px);
+  @include horizontal-padding(20px);
+}
+#bc-date{
+  color: ivory;
+  background-color: $black-coffee;
+}
+#bc-room{
+  text-align: center;
+  background-color: $ivory;
+  color: $black-coffee;
+  border-radius: 3px;
+}
+
 #moneySpent {
   display: flex;
   @include centered();
   flex-direction: column;
-  @include border(#aa2b2f);
-  width: 30%
+  width: 40%;
+  font-size: 3vw;
+  text-align: center;
 }
-#newBookingContainer {
+.acc-funds{
+  font-size: 5vw;
+  color: rgb(0, 88, 0);
+}
+.new-bookings-container {
   display: flex;
-  @include border(#e936e0);
   @include vertical-padding(50px);
   @include horizontal-padding(40px);
 }
 .new-booking-search{
   @include flex-column();
   @include flex-center();
-  @include border(#414141);
   width: 30%;
 }
 #newBookingSearchResults{
   @include flex-center();
-  @include border(#8b4141);
   flex-wrap: wrap;
-  max-height: 300px;
-  width: 100%;
+  width: 50vw;
   justify-content: space-around;
   align-items: flex-start;
   overflow: scroll;
-
+  padding: none;
+  min-height: 100%;
+  min-width: 100%;
+  @include gradient-inset-shadow();
+}
+#newBookingSearchResults p {
+  font-size: 18px;
+  text-align: center;
+  @include horizontal-padding(20px);
+}
+.before-search{
+  @include vertical-padding(40px)
 }
 .new-booking-result{
   @include flex-column();
-  @include border(#1520bb);
+  @include border(#3d3d3d);
+  margin-top: 10px;
   width: 200px;
-  text-align: center;
 }
 .new-booking-result p{
   display: block;
+}
+.new-booking-result img{
+  width: 100%;
+  height: auto;
 }
 .form-horizontal{
   z-index: 1;
@@ -131,6 +178,11 @@ li:hover{
 
 .conf1{
   @include border(#ff5e00);
+}
+.conf1 div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .conf2{

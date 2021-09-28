@@ -4,7 +4,7 @@
 const iterate = {
     findUserBookings(userID, bookingsData){
         let userBookings = bookingsData.filter((booking) => booking.userID === userID)
-        return userBookings;
+        return userBookings.reverse();
     },
     sumUserFundsAccumulated(userBookings, roomData){
         let rooms = roomData
