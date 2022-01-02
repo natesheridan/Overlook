@@ -1,7 +1,7 @@
 
 
 # Overlook Hotel Dashboard
-MOD2 Final Project
+MOD2 Final Project http://ns-overlook.surge.sh/
 ## Table of Contents  
  - [Abstract](#abstract)  
  - [Technologies](#technologies)  
